@@ -15,7 +15,8 @@ The web application will serve as a booking system for small and medium-sized sp
 
 ## Technologies
 * Java
-* Spring Framework
+* Spring MVC
+* Spring Security
 * MySQL
 * Hibernate
 * Git
