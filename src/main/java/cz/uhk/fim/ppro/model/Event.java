@@ -2,8 +2,13 @@ package cz.uhk.fim.ppro.model;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import javax.persistence.*;
 import java.util.Date;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "Event", catalog = "ticketLon", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
 public class Event implements java.io.Serializable {
 
     private Integer idEvent;
@@ -32,6 +37,10 @@ public class Event implements java.io.Serializable {
         this.place = place;
     }
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+
+    @Column(name = "idEvent", unique = true, nullable = false)
     public Integer getIdEvent() {
         return idEvent;
     }
@@ -40,6 +49,7 @@ public class Event implements java.io.Serializable {
         this.idEvent = idEvent;
     }
 
+    @Column(name = "title", unique = true, nullable = false, length = 200)
     public String getTitle() {
         return title;
     }
@@ -48,6 +58,8 @@ public class Event implements java.io.Serializable {
         this.title = title;
     }
 
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "date", nullable = false, length = 19)
     public Date getDate() {
         return date;
     }
@@ -56,6 +68,7 @@ public class Event implements java.io.Serializable {
         this.date = date;
     }
 
+    @Column(name = "duration", nullable = false)
     public int getDuration() {
         return duration;
     }
@@ -64,6 +77,7 @@ public class Event implements java.io.Serializable {
         this.duration = duration;
     }
 
+    @Column(name = "description", nullable = false, length = 500)
     public String getDescription() {
         return description;
     }
@@ -72,6 +86,7 @@ public class Event implements java.io.Serializable {
         this.description = description;
     }
 
+    @Column(name = "numberOfFreeTickets", nullable = false)
     public int getNumberOfFreeTickets() {
         return numberOfFreeTickets;
     }
@@ -80,6 +95,7 @@ public class Event implements java.io.Serializable {
         this.numberOfFreeTickets = numberOfFreeTickets;
     }
 
+    @Column(name = "priceOfOneTicket", nullable = false)
     public double getPriceOfOneTicket() {
         return priceOfOneTicket;
     }
@@ -88,6 +104,8 @@ public class Event implements java.io.Serializable {
         this.priceOfOneTicket = priceOfOneTicket;
     }
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "EventType_idEventType")
     public EventType getType() {
         return type;
     }
@@ -96,6 +114,8 @@ public class Event implements java.io.Serializable {
         this.type = type;
     }
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "Place_idPlace")
     public Place getPlace() {
         return place;
     }

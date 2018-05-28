@@ -1,8 +1,13 @@
 package cz.uhk.fim.ppro.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "User", catalog = "ticketLon", uniqueConstraints = @UniqueConstraint(columnNames = "username"))
 public class User implements java.io.Serializable {
 
     private Integer idUser;
@@ -16,8 +21,12 @@ public class User implements java.io.Serializable {
     public User() {
     }
 
-    public User(Integer idUser, String username, String password, String name, String surname, Role role, Set<Event> events) {
-        this.idUser = idUser;
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(String username, String password, String name, String surname, Role role, Set<Event> events) {
         this.username = username;
         this.password = password;
         this.name = name;
@@ -26,6 +35,10 @@ public class User implements java.io.Serializable {
         this.events = events;
     }
 
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+
+    @Column(name = "idUser", unique = true, nullable = false)
     public Integer getIdUser() {
         return idUser;
     }
@@ -34,6 +47,7 @@ public class User implements java.io.Serializable {
         this.idUser = idUser;
     }
 
+    @Column(name = "username", unique = true, nullable = false, length = 200)
     public String getUsername() {
         return username;
     }
@@ -42,6 +56,7 @@ public class User implements java.io.Serializable {
         this.username = username;
     }
 
+    @Column(name = "password", nullable = false, length = 100)
     public String getPassword() {
         return password;
     }
@@ -50,6 +65,7 @@ public class User implements java.io.Serializable {
         this.password = password;
     }
 
+    @Column(name = "name", length = 100)
     public String getName() {
         return name;
     }
@@ -58,6 +74,7 @@ public class User implements java.io.Serializable {
         this.name = name;
     }
 
+    @Column(name = "surname", length = 100)
     public String getSurname() {
         return surname;
     }
@@ -66,6 +83,10 @@ public class User implements java.io.Serializable {
         this.surname = surname;
     }
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinTable(name = "Role_has_User", catalog = "ticketLon", joinColumns = {
+            @JoinColumn(name = "User_idUser", nullable = false) }, inverseJoinColumns = {
+            @JoinColumn(name = "Role_idRole", nullable = false) })
     public Role getRole() {
         return role;
     }
@@ -74,6 +95,7 @@ public class User implements java.io.Serializable {
         this.role = role;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
     public Set<Event> getEvents() {
         return events;
     }

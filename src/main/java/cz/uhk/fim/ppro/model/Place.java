@@ -1,8 +1,13 @@
 package cz.uhk.fim.ppro.model;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
+@Entity
+@Table(name = "Place", catalog = "ticketLon")
 public class Place implements java.io.Serializable {
 
     private Integer idPlace;
@@ -26,13 +31,19 @@ public class Place implements java.io.Serializable {
         this.events = events;
     }
 
-    public Integer getIdPlace() {        return idPlace;
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+
+    @Column(name = "idPlace", unique = true, nullable = false)
+    public Integer getIdPlace() {
+        return idPlace;
     }
 
     public void setIdPlace(Integer idPlace) {
         this.idPlace = idPlace;
     }
 
+    @Column(name = "name", nullable = false, length = 100)
     public String getName() {
         return name;
     }
@@ -41,6 +52,7 @@ public class Place implements java.io.Serializable {
         this.name = name;
     }
 
+    @Column(name = "street", nullable = false, length = 200)
     public String getStreet() {
         return street;
     }
@@ -49,6 +61,7 @@ public class Place implements java.io.Serializable {
         this.street = street;
     }
 
+    @Column(name = "city", nullable = false, length = 100)
     public String getCity() {
         return city;
     }
@@ -57,6 +70,7 @@ public class Place implements java.io.Serializable {
         this.city = city;
     }
 
+    @Column(name = "zipCode", nullable = false, length = 10)
     public String getZipCode() {
         return zipCode;
     }
@@ -65,6 +79,7 @@ public class Place implements java.io.Serializable {
         this.zipCode = zipCode;
     }
 
+    @Column(name = "numberOfPlaces", nullable = false)
     public int getNumberOfPlaces() {
         return numberOfPlaces;
     }
@@ -73,6 +88,7 @@ public class Place implements java.io.Serializable {
         this.numberOfPlaces = numberOfPlaces;
     }
 
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "place")
     public Set<Event> getEvents() {
         return events;
     }
