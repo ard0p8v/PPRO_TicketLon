@@ -1,5 +1,5 @@
-<%@ include file="/WEB-INF/jsp/includes.jsp" %>
-<%@ include file="/WEB-INF/jsp/header.jsp" %>
+<%@ include file="/WEB-INF/layouts/includes.jsp" %>
+<%@ include file="/WEB-INF/layouts/header.jsp" %>
 
 <div class="container">
     <hr>
@@ -46,4 +46,4 @@
     </div>
 
 
-<%@ include file="/WEB-INF/jsp/footer.jsp" %>
+<%@ include file="/WEB-INF/layouts/footer.jsp" %>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <!DOCTYPE html>
 <html lang="cs">
 
@@ -44,7 +45,7 @@
                         <li><a href="<spring:url value="/places/list" htmlEscape="true" />">Místa</a></li>
                         <li><a style="margin-left: 14cm"
                                href="<spring:url value="/reservation/list" htmlEscape="true" />">Moje rezervace</a></li>
-                        <li><a href="<spring:url value="/login/show" htmlEscape="true" />">
+                        <li><a href="/login.jsp">
                             <div class="text-primary">Přihlásit se</div>
                         </a></li>
                     </ul>
