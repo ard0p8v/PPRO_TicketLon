@@ -33,7 +33,7 @@ public abstract class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implem
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Event> findEventByName(String name) {
+    public List<Event> findEventsByName(String name) {
         Criteria c = currentSession().createCriteria(Event.class);
         if(name != null) {
             c.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
@@ -43,7 +43,7 @@ public abstract class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implem
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<Event> findEventByUser(int idUser) {
+    public List<Event> findEventsByUser(int idUser) {
         Criteria c = currentSession().createCriteria(Event.class);
         c.add(Restrictions.eq("user.idUser", idUser));
         return c.list();

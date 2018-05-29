@@ -13,7 +13,7 @@ public interface INewsDao extends IGeneralDao<News, Integer> {
     public List<News> findAllNews();
 
     /**
-     * Method finds all corresponding names of projects
+     * Method finds all corresponding names of news
      * @param name whole or partial news name
      * @return returns collection of string
      */

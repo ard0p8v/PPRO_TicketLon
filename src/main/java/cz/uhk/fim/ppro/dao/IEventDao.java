@@ -7,7 +7,7 @@ import java.util.List;
 public interface IEventDao extends IGeneralDao<Event, Integer> {
 
     /**
-     * Method finds all active events in DB
+     * Method finds all events in DB
      * @return return collection of found {@link Event}
      */
     public List<Event> findAllEvents();
@@ -24,12 +24,12 @@ public interface IEventDao extends IGeneralDao<Event, Integer> {
      * @param title whole or partial event name
      * @return returns collection of found {@link Event}
      */
-    public List<Event> findEventByName(String title);
+    public List<Event> findEventsByName(String title);
 
     /**
      * Method finds all events for user with id
      * @param idUser unique identifier of User
      * @return returns collection of {@link Event}
      */
-    public List<Event> findEventByUser(int idUser);
+    public List<Event> findEventsByUser(int idUser);
 }
