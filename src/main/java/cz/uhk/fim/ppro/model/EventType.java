@@ -59,7 +59,7 @@ public class EventType implements java.io.Serializable {
         this.description = description;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "eventType")
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "type")
     public Set<Event> getEvents() {
         return events;
     }

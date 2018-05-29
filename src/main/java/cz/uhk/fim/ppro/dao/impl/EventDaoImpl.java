@@ -11,7 +11,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public abstract class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implements IEventDao{
+public class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implements IEventDao{
 
     @SuppressWarnings("unchecked")
     @Override

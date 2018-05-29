@@ -20,15 +20,6 @@ public class EventServiceImpl extends GeneralServiceImpl<Event, Integer> impleme
     private IEventDao eventDao;
 
     @Autowired
-    private IEventTypeService eventTypeService;
-
-    @Autowired
-    private IPlaceService placeService;
-
-    @Autowired
-    private IUserService userService;
-
-    @Autowired
     public EventServiceImpl(@Qualifier("eventDaoImpl") IGeneralDao<Event, Integer> generalDao) {
         super(generalDao);
     }

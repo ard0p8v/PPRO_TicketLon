@@ -2,10 +2,13 @@ package cz.uhk.fim.ppro.model;
 
 import javax.persistence.*;
 
+import static javax.persistence.GenerationType.IDENTITY;
+
 @Entity
 @Table(name = "User_Events", catalog = "ticketLon")
 public class UserEvents {
 
+    private Integer idUserEvents;
     private User user;
     private Event event;
     private int numberOfTickets;
@@ -13,10 +16,23 @@ public class UserEvents {
     public UserEvents() {
     }
 
-    public UserEvents(User user, Event event, int numberOfTickets) {
+    public UserEvents(Integer idUserEvents, User user, Event event, int numberOfTickets) {
+        this.idUserEvents = idUserEvents;
         this.user = user;
         this.event = event;
         this.numberOfTickets = numberOfTickets;
+    }
+
+    @Id
+    @GeneratedValue(strategy = IDENTITY)
+
+    @Column(name = "idUserEvents", unique = true, nullable = false)
+    public Integer getIdUserEvents() {
+        return idUserEvents;
+    }
+
+    public void setIdUserEvents(Integer idUserEvents) {
+        this.idUserEvents = idUserEvents;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

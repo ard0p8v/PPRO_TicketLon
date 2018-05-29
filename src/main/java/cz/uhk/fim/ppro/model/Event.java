@@ -8,7 +8,7 @@ import java.util.Date;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "Event", catalog = "ticketLon", uniqueConstraints = @UniqueConstraint(columnNames = "name"))
+@Table(name = "Event", catalog = "ticketLon", uniqueConstraints = @UniqueConstraint(columnNames = "title"))
 public class Event implements java.io.Serializable {
 
     private Integer idEvent;
@@ -21,11 +21,12 @@ public class Event implements java.io.Serializable {
     private double priceOfOneTicket;
     private EventType type;
     private Place place;
+    private User user;
 
     public Event() {
     }
 
-    public Event(Integer idEvent, String title, Date date, int duration, String description, int numberOfFreeTickets, double priceOfOneTicket, EventType type, Place place) {
+    public Event(Integer idEvent, String title, Date date, int duration, String description, int numberOfFreeTickets, double priceOfOneTicket, EventType type, Place place, User user) {
         this.idEvent = idEvent;
         this.title = title;
         this.date = date;
@@ -35,6 +36,7 @@ public class Event implements java.io.Serializable {
         this.priceOfOneTicket = priceOfOneTicket;
         this.type = type;
         this.place = place;
+        this.user = user;
     }
 
     @Id
@@ -122,5 +124,13 @@ public class Event implements java.io.Serializable {
 
     public void setPlace(Place place) {
         this.place = place;
+    }
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "User_idUser")
+    public User getUser() { return user;  }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 }
