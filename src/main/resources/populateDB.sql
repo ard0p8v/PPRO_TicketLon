@@ -45,3 +45,9 @@ INSERT IGNORE INTO Role_has_User VALUES
   (2, 2),
   (3, 3),
   (1, 3);
+
+INSERT IGNORE INTO User_Events VALUES
+  (1, 1, 5),
+  (2, 2, 10),
+  (3, 3, 2),
+  (1, 3, 4);

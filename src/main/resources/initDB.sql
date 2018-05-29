@@ -65,3 +65,11 @@ CREATE TABLE IF NOT EXISTS Role_has_User (
   FOREIGN KEY (Role_idRole) REFERENCES Role(idRole),
   FOREIGN KEY (User_idUser) REFERENCES User(idUser)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS User_Events (
+  User_idUser INT(4) UNSIGNED NOT NULL,
+  Event_idEvent INT(4) UNSIGNED NOT NULL,
+  numberOfTickets INT(4) NOT NULL,
+  FOREIGN KEY (User_idUser) REFERENCES User(idUser),
+  FOREIGN KEY (Event_idEvent) REFERENCES Event(idEvent)
+) engine=InnoDB DEFAULT CHARSET=utf8;
