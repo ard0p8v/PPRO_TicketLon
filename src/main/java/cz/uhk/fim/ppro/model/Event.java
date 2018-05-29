@@ -77,7 +77,7 @@ public class Event implements java.io.Serializable {
         this.duration = duration;
     }
 
-    @Column(name = "description", nullable = false, length = 500)
+    @Column(name = "description", nullable = false, length = 9999)
     public String getDescription() {
         return description;
     }

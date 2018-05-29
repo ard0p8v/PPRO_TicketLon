@@ -58,7 +58,7 @@ public class News implements java.io.Serializable {
         this.added = added;
     }
 
-    @Column(name = "description", length = 1000)
+    @Column(name = "text", length = 9999)
     public String getText() {
         return text;
     }
