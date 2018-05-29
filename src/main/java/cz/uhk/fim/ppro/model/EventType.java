@@ -7,7 +7,7 @@ import java.util.Set;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "eventType", catalog = "ticketLon")
+@Table(name = "Event_Type", catalog = "ticketLon")
 public class EventType implements java.io.Serializable {
 
     private Integer idEventType;

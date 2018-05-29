@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS News (
   INDEX(name)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS EventType (
+CREATE TABLE IF NOT EXISTS Event_Type (
   idEventType INT(4) UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name VARCHAR(100) NOT NULL,
   description VARCHAR(500),
@@ -38,7 +38,7 @@ CREATE TABLE IF NOT EXISTS Event (
   priceOfOneTicket DOUBLE NOT NULL,
   EventType_idEventType INT(4) UNSIGNED NOT NULL,
   Place_idPlace INT(4) UNSIGNED NOT NULL,
-  FOREIGN KEY (EventType_idEventType) REFERENCES EventType(idEventType),
+  FOREIGN KEY (EventType_idEventType) REFERENCES Event_Type(idEventType),
   FOREIGN KEY (Place_idPlace) REFERENCES Place(idPlace),
   INDEX(title)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
@@ -60,9 +60,8 @@ CREATE TABLE IF NOT EXISTS Role (
 ) engine=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE IF NOT EXISTS Role_has_User (
-  Role_idRole INT(4) NOT NULL,
-  User_idUser INT(4) NOT NULL,
+  Role_idRole INT(4) UNSIGNED NOT NULL,
+  User_idUser INT(4) UNSIGNED NOT NULL,
   FOREIGN KEY (Role_idRole) REFERENCES Role(idRole),
-  FOREIGN KEY (User_idUser) REFERENCES User(idUser),
-  INDEX(roleName)
+  FOREIGN KEY (User_idUser) REFERENCES User(idUser)
 ) engine=InnoDB DEFAULT CHARSET=utf8;
