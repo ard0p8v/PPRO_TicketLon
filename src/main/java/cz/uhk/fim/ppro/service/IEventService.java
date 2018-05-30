@@ -4,7 +4,7 @@ import cz.uhk.fim.ppro.model.Event;
 
 import java.util.List;
 
-public interface IEventService {
+public interface IEventService extends IGeneralService<Event, Integer> {
 
     /**
      * Method which finds all events

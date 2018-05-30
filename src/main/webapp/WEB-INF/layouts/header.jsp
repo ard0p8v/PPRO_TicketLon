@@ -33,19 +33,19 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" href="<spring:url value="/" htmlEscape="true" />">
+                    <a class="navbar-brand" href="/index">
                         <div class="text-primary">TicketLon</div>
                     </a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
-                        <li><a href="<spring:url value="/events/list" htmlEscape="true" />">Události</a></li>
-                        <li><a href="<spring:url value="/news/list" htmlEscape="true" />">Novinky</a></li>
-                        <li><a href="<spring:url value="/places/list" htmlEscape="true" />">Místa</a></li>
+                        <li><a href="/events">Události</a></li>
+                        <li><a href="/news">">Novinky</a></li>
+                        <li><a href="/places">Místa</a></li>
                         <li><a style="margin-left: 14cm"
-                               href="<spring:url value="/reservation/list" htmlEscape="true" />">Moje rezervace</a></li>
-                        <li><a href="/login.jsp">
+                               href="">Moje rezervace</a></li>
+                        <li><a href="/login">
                             <div class="text-primary">Přihlásit se</div>
                         </a></li>
                     </ul>
