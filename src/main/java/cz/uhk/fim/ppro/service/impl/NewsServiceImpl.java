@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -21,7 +22,12 @@ public class NewsServiceImpl extends GeneralServiceImpl<News, Integer> implement
         super(generalDao);
     }
 
-    //read and update method impl
+    @Override
+    public Integer create(News news) {
+        news.setAdded(new Date());
+
+        return newsDao.create(news);
+    }
 
     @Override
     public List<News> findAllNews() {

@@ -34,7 +34,7 @@
                         <td>${event.priceOfOneTicket}Kč</td>
                         <td><a href="<c:url value='/type/detail/${event.type.idType}' />" >${event.type.name}</a></td>
                         <td><a href="<c:url value='/place/detail/${event.place.idPlace}' />" >${event.place.name}</a></td>
-                        <td><a class="btn btn-default btn-md" href="">Rezerzovat</a></td>
+                        <td><a class="btn btn-default btn-md" href="/manage/reservation/create">Rezerzovat</a></td>
                         <td>
                             <a class="btn btn-info btn-block btn-sm" href="<c:url value='/manage/event/edit/${event.idEvent}' />" role="button">Upravit</a>
                             <a class="btn btn-danger btn-block btn-sm" href="<c:url value='/manage/event/remove/${event.idEvent}' />" role="button">Smazat</a>

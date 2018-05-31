@@ -38,7 +38,7 @@ public class PlaceController {
     public String createPlace(@org.springframework.web.bind.annotation.ModelAttribute("placeForm") Place placeForm, BindingResult bindingResult) {
         placeService.create(placeForm);
 
-        return "places";
+        return "redirect:/places";
     }
 
     @RequestMapping({"/manage/place/remove/{id}"})

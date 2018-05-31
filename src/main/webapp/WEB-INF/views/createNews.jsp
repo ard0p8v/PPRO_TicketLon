@@ -22,13 +22,6 @@
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label class="control-label col-xs-2" for="added">Datum přidání novinky:</label>
-                    <div class="col-sm-10">
-                        <form:input type="text" path="added" class="form-control" placeholder="Datum přidání novinky (dd.MM.yyyy HH:mm)" autofocus="true"></form:input>
-                        <form:errors path="added"></form:errors>
-                    </div>
-                </div>
-                <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="text">Vlastní text novinky:</label>
                     <div class="col-sm-10">
                         <form:textarea path="text" rows="8" cols="30" id="description"/>

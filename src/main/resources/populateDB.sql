@@ -6,11 +6,11 @@ INSERT IGNORE INTO Type VALUES
   (5, 'Ostatní', 'popis');
 
 INSERT IGNORE INTO News VALUES
-  (1, 'Do Pelhřimova zavítají Božejáci', '2017-02-02', 'popis'),
-  (2, 'Pelhřimov přetlačil Žďár a dále živí naději na play-off', '2017-02-02', 'popis'),
-  (3, 'Prohra hokejistů Humpolce ukončila sezonu', '2017-02-02', 'popis'),
-  (4, 'Kamenici k obratu v zápase pomohl vlastní gól leštinského Pajera', '2017-02-02', 'popis'),
-  (5, 'Hudba i adrenalin, to je majáles v Pelhřimově', '2017-02-02', 'popis');
+  (1, 'Do Pelhřimova zavítají Božejáci', '2018-05-31 15:01:42.000000', 'popis'),
+  (2, 'Pelhřimov přetlačil Žďár a dále živí naději na play-off', '2018-06-02 08:59:00.000000', 'popis'),
+  (3, 'Prohra hokejistů Humpolce ukončila sezonu', '2018-06-01 11:39:00.000000', 'popis'),
+  (4, 'Kamenici k obratu v zápase pomohl vlastní gól leštinského Pajera', '2018-06-01 05:00:00.000000', 'popis'),
+  (5, 'Hudba i adrenalin, to je majáles v Pelhřimově', '2018-05-31 15:15:00.000000', 'popis');
 
 INSERT IGNORE INTO Place VALUES
   (1, 'Sauna Music Bar', 'U Sauny 1418', N'Pelhřimov', '393 01', 1000),
@@ -46,8 +46,8 @@ INSERT IGNORE INTO Role_has_User VALUES
   (3, 3),
   (1, 3);
 
-INSERT IGNORE INTO User_Events VALUES
-  (1, 1, 1, 5),
-  (2, 2, 2, 10),
-  (3, 3, 3, 2),
-  (4, 1, 3, 4);
+INSERT IGNORE INTO Reservation VALUES
+  (1, 1, 1, 5, '2018-05-31 15:01:42.000000'),
+  (2, 2, 2, 10, '2018-05-31 16:08:04.000000'),
+  (3, 3, 3, 2, '2018-05-31 18:47:03.000000'),
+  (4, 1, 3, 4, '2018-05-31 20:58:53.000000');

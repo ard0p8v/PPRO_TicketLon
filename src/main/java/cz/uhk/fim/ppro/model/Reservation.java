@@ -1,6 +1,10 @@
 package cz.uhk.fim.ppro.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
+
+import java.util.Date;
 
 import static javax.persistence.GenerationType.IDENTITY;
 
@@ -12,15 +16,18 @@ public class Reservation {
     private User user;
     private Event event;
     private int numberOfTickets;
+    @DateTimeFormat(pattern="dd.MM.yyyy HH:mm")
+    private Date added;
 
     public Reservation() {
     }
 
-    public Reservation(Integer idReservation, User user, Event event, int numberOfTickets) {
+    public Reservation(Integer idReservation, User user, Event event, int numberOfTickets, Date added) {
         this.idReservation = idReservation;
         this.user = user;
         this.event = event;
         this.numberOfTickets = numberOfTickets;
+        this.added = added;
     }
 
     @Id
@@ -62,5 +69,15 @@ public class Reservation {
 
     public void setNumberOfTickets(int numberOfTickets) {
         this.numberOfTickets = numberOfTickets;
+    }
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "added", nullable = false, length = 19)
+    public Date getAdded() {
+        return added;
+    }
+
+    public void setAdded(Date added) {
+        this.added = added;
     }
 }
