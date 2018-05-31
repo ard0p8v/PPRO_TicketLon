@@ -34,6 +34,7 @@
     </beans:bean>
 
     <beans:bean id="eventValidator" class="cz.uhk.fim.ppro.validator.EventValidator"></beans:bean>
+    <beans:bean id="typeValidator" class="cz.uhk.fim.ppro.validator.TypeValidator"></beans:bean>
 
     <beans:bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <beans:property name="basenames">

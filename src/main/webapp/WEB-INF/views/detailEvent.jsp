@@ -11,11 +11,11 @@
       		<tbody>
         		<div class="text-primary"><h2>${eventForm.title}</h2></div>
       			<tr>
-      			  	<th><b>Místo konání události</b></th>
+      			  	<th><b>Místo konání události:</b></th>
       			  		<td>${eventForm.place.name}</td>
       			</tr>
 				<tr>
-					<th><b>Typ události</b></th>
+					<th><b>Typ události:</b></th>
 					<td>${eventForm.type.name}</td>
 				</tr>
         		<tr>

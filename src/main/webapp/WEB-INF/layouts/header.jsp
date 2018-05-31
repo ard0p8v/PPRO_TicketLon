@@ -16,8 +16,9 @@
                     <ul class="nav navbar-nav">
                         <li><a href="/events">Události</a></li>
                         <li><a href="/news">Novinky</a></li>
-                        <li><a href="/places">Místa</a></li>
-                        <li><a style="margin-left: 14cm"
+                        <li><a href="/types">Typy událostí</a></li>
+                        <li><a href="/places">Místa událostí</a></li>
+                        <li><a style="margin-left: 11cm"
                                href="">Moje rezervace</a></li>
                         <li><a href="/login">
                             <div class="text-primary">Přihlásit se</div>

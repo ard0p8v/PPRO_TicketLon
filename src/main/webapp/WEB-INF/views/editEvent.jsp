@@ -50,7 +50,7 @@
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label class="control-label col-xs-2" for="type_id">Typ události</label>
+                    <label class="control-label col-xs-2" for="type_id">Typ události:</label>
                     <div class="col-sm-8">
                         <form:select class="form-control" id="type_id" path="type.idType" >
                             <c:forEach items="${typeList}" var="type">
@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label class="control-label col-xs-2" for="place_id">Místo konání události</label>
+                    <label class="control-label col-xs-2" for="place_id">Místo konání události:</label>
                     <div class="col-sm-8">
                         <form:select class="form-control" id="place_id" path="place.idPlace" >
                             <c:forEach items="${placeList}" var="place">
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label class="control-label col-xs-2" for="description">Popis události</label>
+                    <label class="control-label col-xs-2" for="description">Popis události:</label>
                     <div class="col-sm-8">
                         <form:textarea path="description" rows="8" cols="30" id="description"/>
                         <form:errors path="description"></form:errors>
@@ -80,7 +80,7 @@
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-xs-2">
                         <form:hidden path="idEvent" />
-                            <button class="btn btn-primary" type="submit">Upravit událost</button>
+                            <button class="btn btn-primary pull-right" type="submit">Upravit událost</button>
                     </div>
                 </div>
             </form:form>
