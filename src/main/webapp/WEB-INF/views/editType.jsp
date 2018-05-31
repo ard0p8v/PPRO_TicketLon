@@ -8,7 +8,7 @@
         <div class="col-xs-12">
             <div class="text-primary">
                 <h2>
-                    Vytvoření nového typu události:
+                    Editace typu události:
                 </h2>
             </div>
             <br />
@@ -30,8 +30,9 @@
                 </div>
                 <br />
                 <div class="form-group">
-                    <div class="col-sm-offset-1 col-xs-1 pull-right">
-                        <button class="btn btn-primary" type="submit">Vytvořit typ události</button>
+                    <div class="col-sm-offset-1 col-xs-2 pull-right">
+                        <form:hidden path="idType" />
+                        <button class="btn btn-primary" type="submit">Upravit typ události</button>
                     </div>
                 </div>
             </form:form>

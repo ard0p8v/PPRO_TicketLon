@@ -26,8 +26,8 @@
                         <td><a href="<c:url value='/type/detail/${type.idType}' />" >${type.name}</a></td>
                         <td>${type.description}</td>
                         <td>
-                            <a class="btn btn-info btn-block btn-sm" href="<c:url value='/manage/event/edit/${event.idEvent}' />" role="button">Upravit</a>
-                            <a class="btn btn-danger btn-block btn-sm" href="<c:url value='/manage/event/remove/${event.idEvent}' />" role="button">Smazat</a>
+                            <a class="btn btn-info btn-block btn-sm" href="<c:url value='/manage/type/edit/${type.idType}' />" role="button">Upravit</a>
+                            <a class="btn btn-danger btn-block btn-sm" href="<c:url value='/manage/type/remove/${type.idType}' />" role="button">Smazat</a>
                         </td>
                     </tr>
                 </c:forEach>

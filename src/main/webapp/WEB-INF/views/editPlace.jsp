@@ -52,7 +52,8 @@
                 <br />
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-xs-1 pull-right">
-                        <button class="btn btn-primary" type="submit">Vytvořit místo pro konání události</button>
+                        <form:hidden path="idPlace" />
+                        <button class="btn btn-primary" type="submit">Upravit místo pro konání události</button>
                     </div>
                 </div>
             </form:form>

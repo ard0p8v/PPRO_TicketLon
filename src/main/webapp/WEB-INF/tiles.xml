@@ -34,19 +34,29 @@
         <put-attribute name="body" value="/WEB-INF/views/editEvent.jsp" />
     </definition>
 
-    <definition name="detailType" extends="defaultTemplate">
-        <put-attribute name="title" value="Detail typu události"/>
-        <put-attribute name="body" value="/WEB-INF/views/detailType.jsp" />
-    </definition>
-
     <definition name="types" extends="defaultTemplate">
         <put-attribute name="title" value="Seznam typů událostí"/>
         <put-attribute name="body" value="/WEB-INF/views/types.jsp" />
     </definition>
 
+    <definition name="detailType" extends="defaultTemplate">
+        <put-attribute name="title" value="Detail typu události"/>
+        <put-attribute name="body" value="/WEB-INF/views/detailType.jsp" />
+    </definition>
+
     <definition name="createType" extends="defaultTemplate">
         <put-attribute name="title" value="Vytvoření nového typu události"/>
         <put-attribute name="body" value="/WEB-INF/views/createType.jsp" />
+    </definition>
+
+    <definition name="editType" extends="defaultTemplate">
+        <put-attribute name="title" value="Úprava typu události"/>
+        <put-attribute name="body" value="/WEB-INF/views/editType.jsp" />
+    </definition>
+
+    <definition name="places" extends="defaultTemplate">
+        <put-attribute name="title" value="Seznam míst pro konání událostí"/>
+        <put-attribute name="body" value="/WEB-INF/views/places.jsp" />
     </definition>
 
     <definition name="detailPlace" extends="defaultTemplate">
@@ -57,6 +67,31 @@
     <definition name="createPlace" extends="defaultTemplate">
         <put-attribute name="title" value="Vytvoření nového místa pro konání události"/>
         <put-attribute name="body" value="/WEB-INF/views/createPlace.jsp" />
+    </definition>
+
+    <definition name="editPlace" extends="defaultTemplate">
+        <put-attribute name="title" value="Úprava místa události"/>
+        <put-attribute name="body" value="/WEB-INF/views/editPlace.jsp" />
+    </definition>
+
+    <definition name="news" extends="defaultTemplate">
+        <put-attribute name="title" value="Seznam novinek"/>
+        <put-attribute name="body" value="/WEB-INF/views/news.jsp" />
+    </definition>
+
+    <definition name="detailNews" extends="defaultTemplate">
+        <put-attribute name="title" value="Detail novinky"/>
+        <put-attribute name="body" value="/WEB-INF/views/detailNews.jsp" />
+    </definition>
+
+    <definition name="createNews" extends="defaultTemplate">
+        <put-attribute name="title" value="Vytvoření novinky"/>
+        <put-attribute name="body" value="/WEB-INF/views/createNews.jsp" />
+    </definition>
+
+    <definition name="editNews" extends="defaultTemplate">
+        <put-attribute name="title" value="Úprava novinky"/>
+        <put-attribute name="body" value="/WEB-INF/views/editNews.jsp" />
     </definition>
 
     <definition name="login" extends="defaultTemplate">

@@ -44,7 +44,33 @@ public class TypeController {
         }
         typeService.create(typeForm);
 
-        return "types";
+        return "redirect:/types";
+    }
+
+    @RequestMapping({"/manage/type/remove/{id}"})
+    public String deleteType(@PathVariable("id") int id) {
+        typeService.delete(typeService.read(Integer.valueOf(id)));
+
+        return "redirect:/types";
+    }
+
+    @RequestMapping(value={"/manage/type/edit/{id}"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
+    public String editType(@PathVariable("id") int id, Model model) {
+        model.addAttribute("typeForm", typeService.read(Integer.valueOf(id)));
+        model.addAttribute("listTypes", typeService.getAll());
+
+        return "editType";
+    }
+
+    @RequestMapping(value={"/manage/type/edit/{id}"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+    public String saveType(@org.springframework.web.bind.annotation.ModelAttribute("typeForm") Type typeForm, BindingResult bindingResult) {
+        typeValidator.validate(typeForm, bindingResult);
+        if (bindingResult.hasErrors()) {
+            return "editType";
+        }
+        typeService.update(typeForm);
+
+        return "redirect:/types";
     }
 
     @RequestMapping(value = "/type/detail/{id}", method = RequestMethod.GET)
