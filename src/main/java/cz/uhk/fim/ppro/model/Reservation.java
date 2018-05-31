@@ -5,19 +5,19 @@ import javax.persistence.*;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "User_Events", catalog = "ticketLon")
-public class UserEvents {
+@Table(name = "Reservation", catalog = "ticketLon")
+public class Reservation {
 
-    private Integer idUserEvents;
+    private Integer idReservation;
     private User user;
     private Event event;
     private int numberOfTickets;
 
-    public UserEvents() {
+    public Reservation() {
     }
 
-    public UserEvents(Integer idUserEvents, User user, Event event, int numberOfTickets) {
-        this.idUserEvents = idUserEvents;
+    public Reservation(Integer idReservation, User user, Event event, int numberOfTickets) {
+        this.idReservation = idReservation;
         this.user = user;
         this.event = event;
         this.numberOfTickets = numberOfTickets;
@@ -26,13 +26,13 @@ public class UserEvents {
     @Id
     @GeneratedValue(strategy = IDENTITY)
 
-    @Column(name = "idUserEvents", unique = true, nullable = false)
-    public Integer getIdUserEvents() {
-        return idUserEvents;
+    @Column(name = "idReservation", unique = true, nullable = false)
+    public Integer getIdReservation() {
+        return idReservation;
     }
 
-    public void setIdUserEvents(Integer idUserEvents) {
-        this.idUserEvents = idUserEvents;
+    public void setIdReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
 
     @ManyToOne(fetch = FetchType.LAZY)

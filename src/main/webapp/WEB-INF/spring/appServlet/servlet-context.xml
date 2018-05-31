@@ -74,7 +74,7 @@
                 <beans:value>cz.uhk.fim.ppro.model.Place</beans:value>
                 <beans:value>cz.uhk.fim.ppro.model.Role</beans:value>
                 <beans:value>cz.uhk.fim.ppro.model.User</beans:value>
-                <beans:value>cz.uhk.fim.ppro.model.UserEvents</beans:value>
+                <beans:value>cz.uhk.fim.ppro.model.Reservation</beans:value>
             </beans:list>
         </beans:property>
         <beans:property name="hibernateProperties">
