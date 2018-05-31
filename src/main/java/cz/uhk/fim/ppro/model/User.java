@@ -16,7 +16,6 @@ public class User implements java.io.Serializable {
     private String name;
     private String surname;
     private Role role;
-    private Set<Event> events = new HashSet<Event>();
 
     public User() {
     }
@@ -26,13 +25,12 @@ public class User implements java.io.Serializable {
         this.password = password;
     }
 
-    public User(String username, String password, String name, String surname, Role role, Set<Event> events) {
+    public User(String username, String password, String name, String surname, Role role) {
         this.username = username;
         this.password = password;
         this.name = name;
         this.surname = surname;
         this.role = role;
-        this.events = events;
     }
 
     @Id
@@ -95,14 +93,6 @@ public class User implements java.io.Serializable {
         this.role = role;
     }
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "user")
-    public Set<Event> getEvents() {
-        return events;
-    }
-
-    public void setEvents(Set<Event> events) {
-        this.events = events;
-    }
 }
 
 

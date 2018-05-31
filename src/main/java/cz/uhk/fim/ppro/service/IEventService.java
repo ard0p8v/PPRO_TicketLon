@@ -26,10 +26,4 @@ public interface IEventService extends IGeneralService<Event, Integer> {
      */
     public List<Event> getEventsByName(String title);
 
-    /**
-     * Method finds all events for user with corresponding identifier
-     * @param idUser unique identifier of User
-     * @return returns collection of {@link Event}
-     */
-    public List<Event> getEventsByUser(int idUser);
 }

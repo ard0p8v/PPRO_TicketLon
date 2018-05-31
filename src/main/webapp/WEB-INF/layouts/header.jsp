@@ -1,31 +1,5 @@
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
-<!DOCTYPE html>
-<html lang="cs">
-
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>TicketLon - Home page</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="<spring:url value="/static/css/bootstrap.min.css" htmlEscape="true" />"
-          type="text/css"/>
-    <!--<link rel="stylesheet" href="<spring:url value="/static/css/bootstrap1.min.css" htmlEscape="true" />" type="text/css"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<spring:url value="/static/css/business-frontpage.css" htmlEscape="true" />"
-          type="text/css"/>
-
-</head>
-
-<body>
-<div class="navbar-wrapper">
-    <div class="container">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -33,7 +7,7 @@
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
 
-                    <a class="navbar-brand" href="/index">
+                    <a class="navbar-brand" href="/">
                         <div class="text-primary">TicketLon</div>
                     </a>
                 </div>
@@ -41,7 +15,7 @@
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav">
                         <li><a href="/events">Události</a></li>
-                        <li><a href="/news">">Novinky</a></li>
+                        <li><a href="/news">Novinky</a></li>
                         <li><a href="/places">Místa</a></li>
                         <li><a style="margin-left: 14cm"
                                href="">Moje rezervace</a></li>
@@ -54,17 +28,6 @@
             </div>
             <!-- /.container -->
         </nav>
-    </div>
-</div>
 
-<!-- Image Background Page Header -->
-<!-- Note: The background image is set within the business-casual.css file. -->
-<header class="business-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1 class="tagline"></h1>
-            </div>
-        </div>
-    </div>
-</header>
+        <!-- Image Background Page Header -->
+        <!-- Note: The background image is set within the business-casual.css file. -->

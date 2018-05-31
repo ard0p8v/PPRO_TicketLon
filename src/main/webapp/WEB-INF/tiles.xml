@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+    <definition name="defaultTemplate" template="/WEB-INF/layouts/main.jsp">
+        <put-attribute name="header" value="/WEB-INF/layouts/header.jsp" />
+        <put-attribute name="footer" value="/WEB-INF/layouts/footer.jsp" />
+    </definition>
+
+    <definition name="index" extends="defaultTemplate">
+        <put-attribute name="title" value="TicketLon"/>
+        <put-attribute name="body" value="/WEB-INF/views/index.jsp" />
+    </definition>
+
+    <definition name="events" extends="defaultTemplate">
+        <put-attribute name="title" value="Seznam událostí"/>
+        <put-attribute name="body" value="/WEB-INF/views/events.jsp" />
+    </definition>
+
+    <definition name="detailEvent" extends="defaultTemplate">
+        <put-attribute name="title" value="Detail události"/>
+        <put-attribute name="body" value="/WEB-INF/views/detailEvent.jsp" />
+    </definition>
+
+    <definition name="createEvent" extends="defaultTemplate">
+        <put-attribute name="title" value="Vytvoření nové události"/>
+        <put-attribute name="body" value="/WEB-INF/views/createEvent.jsp" />
+    </definition>
+
+    <definition name="editEvent" extends="defaultTemplate">
+        <put-attribute name="title" value="Úprava události"/>
+        <put-attribute name="body" value="/WEB-INF/views/editEvent.jsp" />
+    </definition>
+
+    <definition name="login" extends="defaultTemplate">
+        <put-attribute name="title" value="Přihlášení do systému"/>
+        <put-attribute name="menu" value="/WEB-INF/layouts/header.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
+    </definition>
+
+
+</tiles-definitions>

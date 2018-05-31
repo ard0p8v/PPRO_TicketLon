@@ -40,12 +40,4 @@ public class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implements IEve
         }
         return c.list();
     }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Event> findEventsByUser(int idUser) {
-        Criteria c = currentSession().createCriteria(Event.class);
-        c.add(Restrictions.eq("user.idUser", idUser));
-        return c.list();
-    }
 }

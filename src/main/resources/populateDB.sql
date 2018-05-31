@@ -1,4 +1,4 @@
-INSERT IGNORE INTO Event_Type VALUES
+INSERT IGNORE INTO Type VALUES
   (1, 'Fotbalové utkání', 'Utkání ve fotbale v prestižní soutěži'),
   (2, 'Pěvecký koncert', 'Koncert známých zpěvaček a zpěváků'),
   (3, 'Motokrosová exhibice', 'Exhibice v motokrosu s parádními triky'),
@@ -20,14 +20,14 @@ INSERT IGNORE INTO Place VALUES
   (5, 'Městské sady Pelhřimov', 'U Sadů 73', 'Pelhřimov', '393 01', 5000);
 
 INSERT IGNORE INTO Event VALUES
-  (1, 'Pelhřimov vs Božejov', '2017-02-02', 50, 'popis', 500, 20, 1, 5),
-  (2, 'HC Lední Medvědi Pelhřimov vs HC Tábor', '2017-02-02',50, 'popis', 650, 50, 4, 5),
-  (3, 'Základní vzdělání', '2017-02-02',50, 'popis', 1000, 100, 2, 3),
-  (4, 'Wajt', '2017-02-02',50, 'popis', 1000, 139, 2, 3),
-  (5, 'RedBull Moto', '2017-02-02',50, 'popis', 5000, 300, 3, 7),
-  (6, 'HC Lední Medvědi Pelhřimov vs HC Divocí Lvi Sokolov', '2017-02-02',50, 'popis', 650, 50, 4, 5),
-  (7, 'FC Pelhřimov vs FC Ústrašín', '2017-02-02',50, 'popis', 500, 20, 1, 5),
-  (8, 'Božejáci, dýchánek o páté', '2017-02-02',50, 'popis', 400, 400, 2, 4);
+  (1, 'Pelhřimov vs Božejov', '2018-06-08 15:00:00.000000', 50, 'popis', 500, 20, 1, 5),
+  (2, 'HC Lední Medvědi Pelhřimov vs HC Tábor', '2018-07-08 18:30:00.000000',50, 'popis', 650, 50, 4, 5),
+  (3, 'Základní vzdělání', '2018-06-13 21:00:00.000000',50, 'popis', 1000, 100, 2, 3),
+  (4, 'Wajt', '2018-06-13 22:30:00.000000',50, 'popis', 1000, 139, 2, 3),
+  (5, 'RedBull Moto', '2018-06-09 13:15:00.000000',50, 'popis', 5000, 300, 3, 7),
+  (6, 'HC Lední Medvědi Pelhřimov vs HC Divocí Lvi Sokolov', '2018-06-11 18:30:00.000000',50, 'popis', 650, 50, 4, 5),
+  (7, 'FC Pelhřimov vs FC Ústrašín', '2018-06-15 15:00:00.000000',50, 'popis', 500, 20, 1, 5),
+  (8, 'Božejáci, dýchánek o páté', '2018-06-08 17:00:00.000000',50, 'popis', 400, 400, 2, 4);
 
 INSERT IGNORE INTO User VALUES
   (1, 'test', 'test', 'Pavel', 'Ardolf'),

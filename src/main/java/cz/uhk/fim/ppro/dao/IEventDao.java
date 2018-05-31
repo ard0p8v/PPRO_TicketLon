@@ -26,10 +26,4 @@ public interface IEventDao extends IGeneralDao<Event, Integer> {
      */
     public List<Event> findEventsByName(String title);
 
-    /**
-     * Method finds all events for user with id
-     * @param idUser unique identifier of User
-     * @return returns collection of {@link Event}
-     */
-    public List<Event> findEventsByUser(int idUser);
 }

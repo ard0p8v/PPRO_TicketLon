@@ -1,4 +1,7 @@
-<%@ include file="/WEB-INF/layouts/includes.jsp"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<%@ include file="../layouts/taglibs.jsp"%>
+
 <head>
 
     <meta charset="utf-8">

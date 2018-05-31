@@ -7,23 +7,23 @@ import java.util.Set;
 import static javax.persistence.GenerationType.IDENTITY;
 
 @Entity
-@Table(name = "Event_Type", catalog = "ticketLon")
-public class EventType implements java.io.Serializable {
+@Table(name = "Type", catalog = "ticketLon")
+public class Type implements java.io.Serializable {
 
-    private Integer idEventType;
+    private Integer idType;
     private String name;
     private String description;
     private Set<Event> events = new HashSet<Event>();
 
-    public EventType() {
+    public Type() {
     }
 
-    public EventType(String name) {
+    public Type(String name) {
         this.name = name;
     }
 
-    public EventType(Integer idEventType, String name, String description, Set<Event> events) {
-        this.idEventType = idEventType;
+    public Type(Integer idType, String name, String description, Set<Event> events) {
+        this.idType = idType;
         this.name = name;
         this.description = description;
         this.events = events;
@@ -32,13 +32,13 @@ public class EventType implements java.io.Serializable {
     @Id
     @GeneratedValue(strategy = IDENTITY)
 
-    @Column(name = "idEventType", unique = true, nullable = false)
-    public Integer getIdEventType() {
-        return idEventType;
+    @Column(name = "idType", unique = true, nullable = false)
+    public Integer getIdType() {
+        return idType;
     }
 
-    public void setIdEventType(Integer idEventType) {
-        this.idEventType = idEventType;
+    public void setIdType(Integer idType) {
+        this.idType = idType;
     }
 
     @Column(name = "name", nullable = false, length = 100)
@@ -46,7 +46,7 @@ public class EventType implements java.io.Serializable {
         return name;
     }
 
-    public void setName(String typeOfEvent) {
+    public void setName(String name) {
         this.name = name;
     }
 

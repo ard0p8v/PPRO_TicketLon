@@ -19,14 +19,13 @@ public class Event implements java.io.Serializable {
     private String description;
     private int numberOfFreeTickets;
     private double priceOfOneTicket;
-    private EventType type;
+    private Type type;
     private Place place;
-    private User user;
 
     public Event() {
     }
 
-    public Event(Integer idEvent, String title, Date date, int duration, String description, int numberOfFreeTickets, double priceOfOneTicket, EventType type, Place place, User user) {
+    public Event(Integer idEvent, String title, Date date, int duration, String description, int numberOfFreeTickets, double priceOfOneTicket, Type type, Place place) {
         this.idEvent = idEvent;
         this.title = title;
         this.date = date;
@@ -36,7 +35,6 @@ public class Event implements java.io.Serializable {
         this.priceOfOneTicket = priceOfOneTicket;
         this.type = type;
         this.place = place;
-        this.user = user;
     }
 
     @Id
@@ -107,12 +105,12 @@ public class Event implements java.io.Serializable {
     }
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "EventType_idEventType")
-    public EventType getType() {
+    @JoinColumn(name = "Type_idType")
+    public Type getType() {
         return type;
     }
 
-    public void setType(EventType type) {
+    public void setType(Type type) {
         this.type = type;
     }
 
@@ -124,13 +122,5 @@ public class Event implements java.io.Serializable {
 
     public void setPlace(Place place) {
         this.place = place;
-    }
-
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "User_idUser")
-    public User getUser() { return user;  }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 }

@@ -1,17 +1,17 @@
 package cz.uhk.fim.ppro.service.impl;
 
 import cz.uhk.fim.ppro.dao.IGeneralDao;
-import cz.uhk.fim.ppro.model.EventType;
-import cz.uhk.fim.ppro.service.IEventTypeService;
+import cz.uhk.fim.ppro.model.Type;
+import cz.uhk.fim.ppro.service.ITypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EventTypeServiceImpl extends GeneralServiceImpl<EventType, Integer> implements IEventTypeService {
+public class TypeServiceImpl extends GeneralServiceImpl<Type, Integer> implements ITypeService {
 
     @Autowired
-    public EventTypeServiceImpl(@Qualifier("eventTypeDaoImpl") IGeneralDao<EventType, Integer> generalDao) {
+    public TypeServiceImpl(@Qualifier("typeDaoImpl") IGeneralDao<Type, Integer> generalDao) {
         super(generalDao);
     }
 }
