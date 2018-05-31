@@ -20,7 +20,7 @@
                         <li><a href="/places">Místa událostí</a></li>
                         <li><a href="/reservations" style="margin-left: 11cm">Moje rezervace</a></li>
                         <li><a href="/login">
-                            <div class="text-primary">Přihlásit se</div>
+                            <div class="text-primary">Přihlásit se ${pageContext.request.userPrincipal.name}</div>
                         </a></li>
                     </ul>
                 </div>

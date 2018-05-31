@@ -106,7 +106,6 @@
 
     <definition name="login" extends="defaultTemplate">
         <put-attribute name="title" value="Přihlášení do systému"/>
-        <put-attribute name="menu" value="/WEB-INF/layouts/header.jsp" />
         <put-attribute name="body" value="/WEB-INF/views/login.jsp" />
     </definition>
 

@@ -30,10 +30,10 @@ INSERT IGNORE INTO Event VALUES
   (8, 'Božejáci, dýchánek o páté', '2018-06-08 17:00:00.000000',50, 'popis', 400, 400, 2, 4);
 
 INSERT IGNORE INTO User VALUES
-  (1, 'test', 'test', 'Pavel', 'Ardolf'),
-  (2, 'testUser', 'test', 'Test', 'User'),
-  (3, 'testManager', 'test', 'Test', 'Manager'),
-  (4, 'testAdmin', 'test', 'Test', 'Admin');
+  (1, 'test', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Pavel', 'Ardolf'),
+  (2, 'testUser', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'User'),
+  (3, 'testManager', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'Manager'),
+  (4, 'testAdmin', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'Admin');
 
 INSERT IGNORE INTO Role VALUES
   (1, 'ROLE_ADMIN', 'test'),

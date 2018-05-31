@@ -2,28 +2,10 @@
          pageEncoding="UTF-8"%>
 <%@ include file="../layouts/taglibs.jsp"%>
 
-<head>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>TicketLon - Home page</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link rel="stylesheet" href="<spring:url value="/static/styles/bootstrap.min.css" htmlEscape="true" />" type="text/css"/>
-    <!--<link rel="stylesheet" href="<spring:url value="/static/styles/bootstrap1.min.css" htmlEscape="true" />" type="text/css"/>
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="<spring:url value="/static/styles/business-frontpage.css" htmlEscape="true" />" type="text/css"/>
-
 <style>
 body {
   padding-top: 40px;
   padding-bottom: 40px;
-  background-color: #333;
 }
 
 .form-signin {
@@ -66,26 +48,25 @@ body {
 }
 </style>
 
-</head>
-
-
-<body>
 	<div class="container">
 
-    	
-    	<form class="form-signin">
-        	<div class="text-primary" style="text-align: center"><h1>TicketLon</h1></div>
-        	<h2 class="form-signin-text">Přihlášení</h2>
-        	
-        	<label for="inputEmail" class="sr-only">Uživatelské jméno</label>
-        	<input type="email" id="inputEmail" class="form-control" placeholder="Uživatelské jméno" required autofocus>
-        	
-        	<label for="inputPassword" class="sr-only">Heslo</label>
-        	<input type="password" id="inputPassword" class="form-control" placeholder="Heslo" required>
-        	
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Přihlásit</button>
-      </form>
+    	<form method="POST" action="${contextPath}/login" class="form-signin">
+            <div class="form-group ${error != null ? 'has-error' : ''}">
+                <div class="text-primary" style="text-align: center"><h1>TicketLon</h1></div>
+                <h2 class="form-signin-text">Přihlášení</h2>
+
+                <label for="inputEmail" class="sr-only">Uživatelské jméno</label>
+                <span>${message}</span>
+                <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Uživatelské jméno" autofocus="true" required />
+
+                <label for="inputPassword" class="sr-only">Heslo</label>
+                <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Heslo" required>
+                <span>${error}</span>
+                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Přihlásit</button>
+            </div>
+        </form>
 
     </div> 
-    
-</body>
+
