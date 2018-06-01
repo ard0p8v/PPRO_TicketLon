@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
+<%@ include file="../layouts/taglibs.jsp"%>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -18,10 +19,13 @@
                         <li><a href="/news">Novinky</a></li>
                         <li><a href="/types">Typy událostí</a></li>
                         <li><a href="/places">Místa událostí</a></li>
-                        <li><a href="/reservations" style="margin-left: 11cm">Moje rezervace</a></li>
-                        <li><a href="/login">
-                            <div class="text-primary">Přihlásit se ${pageContext.request.userPrincipal.name}</div>
-                        </a></li>
+                        <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
+                        <li><a href="/reservations">${pageContext.request.userPrincipal.name}:Moje rezervace</a></li>
+                        </security:authorize>
+                        <li><a href="/login"><div class="text-primary">Přihlásit se</div></a></li>
+                        <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
+                        <li><a href="/logout"><div class="text-danger">Odhlásit se</div></a></li>
+                        </security:authorize>
                     </ul>
                 </div>
                 <!-- /.navbar-collapse -->

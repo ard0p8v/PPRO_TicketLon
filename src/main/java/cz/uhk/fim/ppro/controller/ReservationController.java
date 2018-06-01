@@ -1,8 +1,11 @@
 package cz.uhk.fim.ppro.controller;
 
 import cz.uhk.fim.ppro.model.Reservation;
+import cz.uhk.fim.ppro.model.User;
 import cz.uhk.fim.ppro.service.IReservationService;
+import cz.uhk.fim.ppro.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -10,17 +13,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
+
 @Controller
 public class ReservationController {
 
-    @Autowired
+    @Autowired(required = true)
     private IReservationService reservationService;
+
+    @Autowired(required = true)
+    private IUserService userService;
 
     @RequestMapping(value={"/reservations"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
     public String listReservations(Model model)
     {
-        model.addAttribute("reservation", new Reservation());
-        model.addAttribute("listReservations", reservationService.getAll());
+        String s = (String)SecurityContextHolder.getContext().getAuthentication().getName();
+        User u = userService.findByUsername(s);
+
+        model.addAttribute("user", u);
+        model.addAttribute("listReservations", reservationService.getReservationsByUser(u.getIdUser()));
 
         return "reservations";
     }

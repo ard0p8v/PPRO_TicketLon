@@ -53,7 +53,7 @@ body {
     	<form method="POST" action="${contextPath}/login" class="form-signin">
             <div class="form-group ${error != null ? 'has-error' : ''}">
                 <div class="text-primary" style="text-align: center"><h1>TicketLon</h1></div>
-                <h2 class="form-signin-text">Přihlášení</h2>
+                <h2 class="form-signin-text" style="color: black">Přihlášení</h2>
 
                 <label for="inputEmail" class="sr-only">Uživatelské jméno</label>
                 <span>${message}</span>

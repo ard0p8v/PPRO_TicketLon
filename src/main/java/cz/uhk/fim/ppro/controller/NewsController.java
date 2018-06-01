@@ -74,7 +74,7 @@ public class NewsController {
         return "redirect:/news";
     }
 
-    @RequestMapping(value = "/type/news/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/news/detail/{id}", method = RequestMethod.GET)
     public String detailNews(@PathVariable("id") int id, Model model){
         model.addAttribute("newsForm", newsService.read(id));
         return "detailNews";

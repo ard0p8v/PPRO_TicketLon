@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Integer> implements IReservationService {
@@ -32,13 +33,17 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
     @Override
     public Integer create(Reservation reservation) {
         //reservation.setEvent(eventService.read(reservation.getEvent().getIdEvent()));
-        //reservation.setUser(userService.read(reservation.getUser().getIdUser()));
+        reservation.setUser(userService.read(reservation.getUser().getIdUser()));
         reservation.setAdded(new Date());
         reservation.setEvent(eventService.read(2));
-        reservation.setUser(userService.read(1));
+        //reservation.setUser(userService.read(1));
 
         return reservationDao.create(reservation);
     }
 
 
+    @Override
+    public List<Reservation> getReservationsByUser(int idUser) {
+        return reservationDao.getReservationsByUser(idUser);
+    }
 }

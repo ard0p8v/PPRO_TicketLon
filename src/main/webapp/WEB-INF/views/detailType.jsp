@@ -16,9 +16,10 @@
                 </tr>
                 </tbody>
             </table>
+            <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
             <br /> <a class="btn btn-primary col-sm-offset-1 col-xs-1t"  href="/manage/type/create" role="button">Vytvořit nový typ události</a>
-
             <br />
+            </security:authorize>
         </div>
     </div>
 </div>

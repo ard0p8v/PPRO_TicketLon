@@ -28,9 +28,10 @@
                 </tr>
                 </tbody>
             </table>
-            <br /> <a class="btn btn-primary col-sm-offset-1 col-xs-1"  href="/manage/place/create" role="button">Vytvořit nové místo pro konání událostí</a>
-
+            <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
+            <br /> <a class="btn btn-primary col-sm-offset-1 col-xs-1t"  href="/manage/place/create" role="button">Vytvořit nové místo pro konání událostí</a>
             <br />
+            </security:authorize>
         </div>
     </div>
 </div>

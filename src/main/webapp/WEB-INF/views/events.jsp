@@ -9,7 +9,9 @@
 
             <div class="text-primary"> <h2>Seznam událostí:</h2> </div>
 
+            <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
             <br /> <a class="btn btn-primary btn-sm"  href="/manage/event/create" role="button">Vytvořit událost</a>
+            </security:authorize>
 
             <br />
 
@@ -22,8 +24,12 @@
                     <th>Cena</th>
                     <th>Typ události</th>
                     <th>Místo konání</th>
+                    <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
                     <th>Rezervovat</th>
+                    </security:authorize>
+                    <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
                     <th>Akce</th>
+                    </security:authorize>
                 </tr>
                 </thead>
                 <c:forEach items="${listEvents}" var="event">
@@ -34,11 +40,15 @@
                         <td>${event.priceOfOneTicket}Kč</td>
                         <td><a href="<c:url value='/type/detail/${event.type.idType}' />" >${event.type.name}</a></td>
                         <td><a href="<c:url value='/place/detail/${event.place.idPlace}' />" >${event.place.name}</a></td>
+                        <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
                         <td><a class="btn btn-default btn-md" href="/manage/reservation/create">Rezerzovat</a></td>
+                        </security:authorize>
+                        <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
                         <td>
                             <a class="btn btn-info btn-block btn-sm" href="<c:url value='/manage/event/edit/${event.idEvent}' />" role="button">Upravit</a>
                             <a class="btn btn-danger btn-block btn-sm" href="<c:url value='/manage/event/remove/${event.idEvent}' />" role="button">Smazat</a>
                         </td>
+                        </security:authorize>
                     </tr>
                 </c:forEach>
             </table>
