@@ -21,6 +21,7 @@
                         <form:errors path="numberOfTickets"></form:errors>
                     </div>
                 </div>
+
                 <br />
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-xs-1 pull-right">

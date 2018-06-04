@@ -29,8 +29,8 @@ public class EventServiceImpl extends GeneralServiceImpl<Event, Integer> impleme
     }
 
     @Override
-    public List<String> getEventNames(String title) {
-        return eventDao.findEventNames(title);
+    public List<String> getEventId(int id) {
+        return eventDao.findEventId(id);
     }
 
     @Override

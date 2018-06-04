@@ -3,11 +3,13 @@ package cz.uhk.fim.ppro.service.impl;
 import cz.uhk.fim.ppro.dao.IGeneralDao;
 import cz.uhk.fim.ppro.dao.IReservationDao;
 import cz.uhk.fim.ppro.model.Reservation;
+import cz.uhk.fim.ppro.model.User;
 import cz.uhk.fim.ppro.service.IEventService;
 import cz.uhk.fim.ppro.service.IReservationService;
 import cz.uhk.fim.ppro.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 
 import java.util.Date;
@@ -32,11 +34,12 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
 
     @Override
     public Integer create(Reservation reservation) {
-        //reservation.setEvent(eventService.read(reservation.getEvent().getIdEvent()));
-        reservation.setUser(userService.read(reservation.getUser().getIdUser()));
+        String s = (String)SecurityContextHolder.getContext().getAuthentication().getName();
+        User u = userService.findByUsername(s);
+
+        reservation.setUser(userService.read(u.getIdUser()));
         reservation.setAdded(new Date());
-        reservation.setEvent(eventService.read(2));
-        //reservation.setUser(userService.read(1));
+        //reservation.setEvent(eventService.read());
 
         return reservationDao.create(reservation);
     }

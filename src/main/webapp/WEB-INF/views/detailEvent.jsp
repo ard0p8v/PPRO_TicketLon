@@ -40,8 +40,9 @@
         		</tr>
 			</tbody>
 			</table>
-
+			<security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
 			<a class="btn btn-default btn-lg">Rezerzovat událost</a>
+			</security:authorize>
         </div>
 	</div>
 </div>

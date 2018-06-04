@@ -24,6 +24,7 @@
                     <th>Cena</th>
                     <th>Typ události</th>
                     <th>Místo konání</th>
+                    <th>Počet volných vstupenek</th>
                     <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
                     <th>Rezervovat</th>
                     </security:authorize>
@@ -40,8 +41,9 @@
                         <td>${event.priceOfOneTicket}Kč</td>
                         <td><a href="<c:url value='/type/detail/${event.type.idType}' />" >${event.type.name}</a></td>
                         <td><a href="<c:url value='/place/detail/${event.place.idPlace}' />" >${event.place.name}</a></td>
+                        <td>${event.numberOfFreeTickets}</td>
                         <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
-                        <td><a class="btn btn-default btn-md" href="/manage/reservation/create">Rezerzovat</a></td>
+                        <td><a class="btn btn-default btn-md" href="<c:url value='/events/${event.idEvent}/manage/reservation/create' />">Rezervovat</a></td>
                         </security:authorize>
                         <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN')">
                         <td>

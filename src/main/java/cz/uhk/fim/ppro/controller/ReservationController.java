@@ -2,6 +2,7 @@ package cz.uhk.fim.ppro.controller;
 
 import cz.uhk.fim.ppro.model.Reservation;
 import cz.uhk.fim.ppro.model.User;
+import cz.uhk.fim.ppro.service.IEventService;
 import cz.uhk.fim.ppro.service.IReservationService;
 import cz.uhk.fim.ppro.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,9 +12,6 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-
-import java.security.Principal;
 
 @Controller
 public class ReservationController {
@@ -23,6 +21,9 @@ public class ReservationController {
 
     @Autowired(required = true)
     private IUserService userService;
+
+    @Autowired(required = true)
+    private IEventService eventService;
 
     @RequestMapping(value={"/reservations"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
     public String listReservations(Model model)
@@ -36,14 +37,16 @@ public class ReservationController {
         return "reservations";
     }
 
-    @RequestMapping(value = "/manage/reservation/create", method = RequestMethod.GET)
-    public String createReservation(Model model) {
-        model.addAttribute("reservationForm", new Reservation());
+    @RequestMapping(value={"/events/{id}/manage/reservation/create"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
+    public String createReservation(Model model, @PathVariable("id") int id) {
+        model.addAttribute("eventReservation", eventService.read(id));
+        model.addAttribute("eventList", eventService.getAll());
+        model.addAttribute("reservationForm", new Reservation(eventService.read(id)));
 
         return "createReservation";
     }
 
-    @RequestMapping(value={"/manage/reservation/create"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+    @RequestMapping(value={"/events/{id}/manage/reservation/create"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
     public String createReservation(@org.springframework.web.bind.annotation.ModelAttribute("reservationForm") Reservation reservationForm, BindingResult bindingResult) {
         reservationService.create(reservationForm);
 

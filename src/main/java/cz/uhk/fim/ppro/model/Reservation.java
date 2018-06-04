@@ -19,7 +19,12 @@ public class Reservation {
     @DateTimeFormat(pattern="dd.MM.yyyy HH:mm")
     private Date added;
 
-    public Reservation() {
+    public Reservation(){
+
+    }
+
+    public Reservation(Event event) {
+        this.event = event;
     }
 
     public Reservation(Integer idReservation, User user, Event event, int numberOfTickets, Date added) {
