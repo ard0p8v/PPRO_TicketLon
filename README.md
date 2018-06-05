@@ -13,6 +13,24 @@ The web application will serve as a booking system for small and medium-sized sp
 
 ![usecase](https://user-images.githubusercontent.com/25181243/32955155-71cd65e6-cbb5-11e7-8ba8-6d1fc7a69d22.png)
 
+## Database
+Two sql scripts are attached to the project:
+* initDB.sql - base schema of database
+* populateDB.sql - default data
+<hr />
+
+## Login
+You can log in to the system using four user accounts:
+
+| username  | password | role |
+| --------- | --------- | --------- |
+| test  | test  | user |
+| userPepa  | userPepa  | user |
+| managerFranta | managerFranta | manager |
+| adminHonza | adminHonza | admin |
+
+
+
 ## Technologies
 * Java
 * Spring MVC
