@@ -15,5 +15,4 @@ public interface IReservationService extends IGeneralService<Reservation, Intege
      */
     public List<Reservation> getReservationsByUser(int idUser);
 
-    public List<Event> getEventByReservation(int idEvent);
 }

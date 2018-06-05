@@ -22,17 +22,6 @@ public class NewsDaoImpl extends GeneralDaoImpl<News, Integer> implements INewsD
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<String> findNewsName(String name) {
-        Criteria c = currentSession().createCriteria(News.class);
-        if(name != null) {
-            c.add(Restrictions.ilike("name", name, MatchMode.ANYWHERE));
-        }
-        c.setProjection(Projections.property("name"));
-        return c.list();
-    }
-
-    @SuppressWarnings("unchecked")
-    @Override
     public List<News> findNewsByName(String name) {
         Criteria c = currentSession().createCriteria(News.class);
         if(name != null) {

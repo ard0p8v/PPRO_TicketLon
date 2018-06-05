@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-xs-4">
                     <div class="form-group center-block">
-                        <input id="w-input-search" class="form-control" name="filter" type="text">
+                        <input id="w-input-search" class="form-control" name="filter" type="text" placeholder="Hledejte podle názvu události">
                     </div>
                 </div>
                 <div class="col-xs-2">

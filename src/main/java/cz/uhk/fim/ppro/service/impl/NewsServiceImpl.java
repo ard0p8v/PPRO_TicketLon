@@ -35,11 +35,6 @@ public class NewsServiceImpl extends GeneralServiceImpl<News, Integer> implement
     }
 
     @Override
-    public List<String> getNewsName(String name) {
-        return newsDao.findNewsName(name);
-    }
-
-    @Override
     public List<News> getNewsByName(String name) {
         return newsDao.findNewsByName(name);
     }

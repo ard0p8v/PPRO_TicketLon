@@ -56,12 +56,12 @@ body {
                 <h2 class="form-signin-text" style="color: black">Přihlášení</h2>
 
                 <label for="inputEmail" class="sr-only">Uživatelské jméno</label>
-                <span>${message}</span>
                 <input name="username" type="text" id="inputEmail" class="form-control" placeholder="Uživatelské jméno" autofocus="true" required />
 
                 <label for="inputPassword" class="sr-only">Heslo</label>
                 <input name="password" type="password" id="inputPassword" class="form-control" placeholder="Heslo" required>
                 <span>${error}</span>
+                <span>${message}</span>
                 <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
                 <button class="btn btn-lg btn-primary btn-block" type="submit">Přihlásit</button>

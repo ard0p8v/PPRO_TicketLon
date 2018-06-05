@@ -19,14 +19,4 @@ public class ReservationDaoImpl extends GeneralDaoImpl<Reservation, Integer> imp
         c.add(Restrictions.eq("user.idUser", idUser));
         return c.list();
     }
-
-    @SuppressWarnings("unchecked")
-    @Override
-    public List<Event> getEventByReservation(int idEvent) {
-        Criteria c = currentSession().createCriteria(Reservation.class);
-        c.add(Restrictions.eq("event.idEvent", idEvent));
-        return c.list();
-    }
-
-
 }

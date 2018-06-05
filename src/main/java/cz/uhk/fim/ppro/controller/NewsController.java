@@ -1,5 +1,6 @@
 package cz.uhk.fim.ppro.controller;
 
+import cz.uhk.fim.ppro.model.Event;
 import cz.uhk.fim.ppro.model.News;
 import cz.uhk.fim.ppro.model.Type;
 import cz.uhk.fim.ppro.service.INewsService;
@@ -12,6 +13,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class NewsController {
@@ -26,6 +28,15 @@ public class NewsController {
     public String listNews(Model model){
         model.addAttribute("news", new News());
         model.addAttribute("listNews", newsService.getAll());
+
+        return "news";
+    }
+
+    @RequestMapping(value={"/news"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+    public String listNewsFilter(Model model, @RequestParam("filter") String filter)
+    {
+        model.addAttribute("news", new News());
+        model.addAttribute("listNews", newsService.getNewsByName(filter));
 
         return "news";
     }

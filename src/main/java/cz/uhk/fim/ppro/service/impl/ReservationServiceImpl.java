@@ -2,7 +2,6 @@ package cz.uhk.fim.ppro.service.impl;
 
 import cz.uhk.fim.ppro.dao.IGeneralDao;
 import cz.uhk.fim.ppro.dao.IReservationDao;
-import cz.uhk.fim.ppro.model.Event;
 import cz.uhk.fim.ppro.model.Reservation;
 import cz.uhk.fim.ppro.model.User;
 import cz.uhk.fim.ppro.service.IEventService;
@@ -35,7 +34,7 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
 
     @Override
     public Integer create(Reservation reservation) {
-        String s = (String)SecurityContextHolder.getContext().getAuthentication().getName();
+        String s = (String) SecurityContextHolder.getContext().getAuthentication().getName();
         User u = userService.findByUsername(s);
 
         reservation.setUser(userService.read(u.getIdUser()));
@@ -46,8 +45,8 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
     }
 
     @Override
-    public void update(Reservation reservation){
-        String s = (String)SecurityContextHolder.getContext().getAuthentication().getName();
+    public void update(Reservation reservation) {
+        String s = (String) SecurityContextHolder.getContext().getAuthentication().getName();
         User u = userService.findByUsername(s);
 
         reservation.setUser(userService.read(u.getIdUser()));
@@ -62,6 +61,4 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
         return reservationDao.getReservationsByUser(idUser);
     }
 
-    @Override
-    public List<Event> getEventByReservation(int idEvent) { return reservationDao.getEventByReservation(idEvent);    }
 }

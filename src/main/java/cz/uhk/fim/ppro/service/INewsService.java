@@ -13,13 +13,6 @@ public interface INewsService extends IGeneralService<News, Integer> {
     public List<News> findAllNews();
 
     /**
-     * Method finds names of news with corresponding name
-     * @param name whole or partial name of events
-     * @return returns collection of String
-     */
-    public List<String> getNewsName(String name);
-
-    /**
      * Method finds news by name
      * @param name partial or whole name
      * @return returns collection of {@link News}

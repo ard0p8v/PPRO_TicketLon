@@ -19,12 +19,11 @@ public class LoginController {
             return "forward:/index";
         } else {
 
-            /* The user is logged in :) */
             if (error != null)
-                model.addAttribute("error", "Zadane jmeno nebo heslo neni spravne");
+                model.addAttribute("error", "Zadane jmeno nebo heslo neni spravne.");
 
             if (logout != null)
-                model.addAttribute("message", "Byli jste uspesne odhlaseni");
+                model.addAttribute("message", "Byli jste uspesne odhlaseni.");
 
             return "login";
         }

@@ -13,6 +13,4 @@ public interface IReservationDao extends IGeneralDao<Reservation, Integer> {
      * @return returns collection of {@link Reservation}
      */
     public List<Reservation> getReservationsByUser(int idUser);
-
-    public List<Event> getEventByReservation(int idEvent);
 }

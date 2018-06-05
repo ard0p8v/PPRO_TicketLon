@@ -8,14 +8,6 @@
 		http://www.springframework.org/schema/security/spring-security.xsd">
 
     <http auto-config="true">
-        <intercept-url pattern="/admin/**" access="hasAnyRole('ROLE_ADMIN')" />
-        <intercept-url pattern="/manager/**" access="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" />
-        <intercept-url pattern="/project**" access="isAuthenticated()"/>
-        <intercept-url pattern="/comments**" access="isAuthenticated()"/>
-        <intercept-url pattern="/user**" access="isAuthenticated()"/>
-        <intercept-url pattern="/task**/**" access="isAuthenticated()"/>
-        <intercept-url pattern="/dashboard**" access="isAuthenticated()"/>
-        <intercept-url pattern="/task**/remove/**" access="hasAnyRole('ROLE_ADMIN','ROLE_MANAGER')" />
         <form-login login-page="/login" default-target-url="/events" authentication-failure-url="/login?error" username-parameter="username" password-parameter="password"/>
         <logout logout-success-url="/login?logout" />
     </http>

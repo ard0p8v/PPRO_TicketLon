@@ -23,7 +23,7 @@
                         <li><a href="/users">Uživatelé</a></li>
                         </security:authorize>
                         <security:authorize access="hasAnyRole('ROLE_MANAGER','ROLE_ADMIN','ROLE_USER')">
-                        <li><a href="/reservations">${pageContext.request.userPrincipal.name}:Moje rezervace</a></li>
+                        <li><a href="/reservations">${pageContext.request.userPrincipal.name}: Rezervace</a></li>
                         </security:authorize>
 
                         <li><a href="/login"><div class="text-primary">Přihlásit se</div></a></li>

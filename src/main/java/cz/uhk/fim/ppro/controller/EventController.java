@@ -38,7 +38,7 @@ public class EventController
     }
 
     @RequestMapping(value={"/events"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
-    public String listEventsFiltr(Model model, @RequestParam("filter") String filter)
+    public String listEventsFilter(Model model, @RequestParam("filter") String filter)
     {
         model.addAttribute("event", new Event());
         model.addAttribute("listEvents", eventService.getEventsByName(filter));
