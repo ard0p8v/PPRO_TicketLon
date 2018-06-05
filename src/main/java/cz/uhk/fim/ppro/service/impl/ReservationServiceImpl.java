@@ -45,6 +45,17 @@ public class ReservationServiceImpl extends GeneralServiceImpl<Reservation, Inte
         return reservationDao.create(reservation);
     }
 
+    @Override
+    public void update(Reservation reservation){
+        String s = (String)SecurityContextHolder.getContext().getAuthentication().getName();
+        User u = userService.findByUsername(s);
+
+        reservation.setUser(userService.read(u.getIdUser()));
+        reservation.setAdded(new Date());
+
+        reservationDao.update(reservation);
+    }
+
 
     @Override
     public List<Reservation> getReservationsByUser(int idUser) {

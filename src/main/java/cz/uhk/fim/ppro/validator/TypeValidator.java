@@ -24,7 +24,7 @@ public class TypeValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
         if (type.getName().length() < 6 || type.getName().length() > 200) {
-            errors.rejectValue("name", "Size.typeForm.type");
+            errors.rejectValue("name", "Size.typeForm.name");
         }
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "NotEmpty");
         if (type.getDescription().length() < 6 || type.getDescription().length() > 500) {

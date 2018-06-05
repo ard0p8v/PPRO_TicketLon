@@ -26,7 +26,7 @@ public class NewsValidator implements Validator {
 
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
         if (news.getName().length() < 6 || news.getName().length() > 200) {
-            errors.rejectValue("name", "Size.newsForm.news");
+            errors.rejectValue("name", "Size.newsForm.name");
         }
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "text", "NotEmpty");
         if (news.getText().length() < 6 || news.getText().length() > 500) {

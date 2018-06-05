@@ -16,7 +16,7 @@
             <form:form method="POST" modelAttribute="reservationForm" class="form-horizontal">
 
                 <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <label class="control-label col-xs-2">Událost:</label>
+                    <label class="control-label col-xs-2">Zadejte počet rezervací:</label>
                     <div class="col-sm-10">
                         <form:select class="form-control" id="event_id" path="event.idEvent" >
                             <c:forEach items="${eventReservation}" var="event">
@@ -37,7 +37,8 @@
                 <br />
                 <div class="form-group">
                     <div class="col-sm-offset-1 col-xs-1 pull-right">
-                        <button class="btn btn-primary" type="submit">Vytvořit rezervaci</button>
+                        <form:hidden path="idReservation" />
+                        <button class="btn btn-primary" type="submit">Uložit změny</button>
                     </div>
                 </div>
             </form:form>
