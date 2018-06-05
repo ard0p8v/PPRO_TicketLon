@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @org.springframework.stereotype.Controller
 @org.springframework.web.bind.annotation.SessionAttributes({"typeList", "placeList"})
@@ -26,11 +27,21 @@ public class EventController
 
     public EventController() {}
 
+
     @RequestMapping(value={"/events"}, method={org.springframework.web.bind.annotation.RequestMethod.GET})
     public String listEvents(Model model)
     {
         model.addAttribute("event", new Event());
         model.addAttribute("listEvents", eventService.getAll());
+
+        return "events";
+    }
+
+    @RequestMapping(value={"/events"}, method={org.springframework.web.bind.annotation.RequestMethod.POST})
+    public String listEventsFiltr(Model model, @RequestParam("filter") String filter)
+    {
+        model.addAttribute("event", new Event());
+        model.addAttribute("listEvents", eventService.getEventsByName(filter));
 
         return "events";
     }

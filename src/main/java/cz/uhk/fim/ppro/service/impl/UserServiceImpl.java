@@ -7,12 +7,16 @@ import cz.uhk.fim.ppro.service.IRoleService;
 import cz.uhk.fim.ppro.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
 public class UserServiceImpl extends GeneralServiceImpl<User, Integer> implements IUserService {
+
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
 
     @Autowired
     private IUserDao userDao;
@@ -27,7 +31,7 @@ public class UserServiceImpl extends GeneralServiceImpl<User, Integer> implement
 
     @Override
     public Integer create(User user) {
-        user.setPassword(user.getPassword());
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         user.setRole(user.getRole());
         return userDao.create(user);
     }
@@ -37,7 +41,7 @@ public class UserServiceImpl extends GeneralServiceImpl<User, Integer> implement
         user.setName(user.getName());
         user.setSurname(user.getSurname());
         user.setRole(user.getRole());
-        user.setPassword(user.getPassword());
+        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
         userDao.update(user);
     }
 

@@ -31,9 +31,9 @@ INSERT IGNORE INTO Event VALUES
 
 INSERT IGNORE INTO User VALUES
   (1, 'test', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Pavel', 'Ardolf'),
-  (2, 'testUser', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'User'),
-  (3, 'testManager', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'Manager'),
-  (4, 'testAdmin', '$2a$04$8lF17eMr9/VeBawHb8tdMe28m2oPdZqgbnF4xZoY676bx1ff61Eie', 'Test', 'Admin');
+  (2, 'userPepa', '$2a$11$4GNZHcOtuXvTMXB71q14NetnUgsUaMa0fu5/q4vwqDztcc9OcMr4C', 'Josef', 'Novak'),
+  (3, 'managerFranta', '$2a$11$4UsGvmKWu9x2gz.F1iM.0OvipEishCc3hSUT92qcNDuy7wYlKBwE.', 'František', 'Svoboda'),
+  (4, 'adminHonza', '$2a$11$m5HKvksTyV6GlO4sp2bii.pGCHmcdH9Oksymi1C3.UmHzPwYcaiwy', 'Jan', 'Dvořák');
 
 INSERT IGNORE INTO Role VALUES
   (1, 'ROLE_ADMIN', 'test'),
@@ -41,13 +41,13 @@ INSERT IGNORE INTO Role VALUES
   (3, 'ROLE_MANAGER', 'test');
 
 INSERT IGNORE INTO Role_has_User VALUES
-  (2, 2),
+  (1, 4),
   (3, 3),
-  (1, 2),
-  (4, 1);
+  (2, 2),
+  (2, 1);
 
 INSERT IGNORE INTO Reservation VALUES
   (1, 1, 1, 5, '2018-05-31 15:01:42.000000'),
   (2, 2, 2, 10, '2018-05-31 16:08:04.000000'),
   (3, 3, 3, 2, '2018-05-31 18:47:03.000000'),
-  (4, 1, 3, 4, '2018-05-31 20:58:53.000000');
+  (4, 4, 3, 4, '2018-05-31 20:58:53.000000');
