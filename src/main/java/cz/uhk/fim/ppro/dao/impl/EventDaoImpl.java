@@ -22,7 +22,7 @@ public class EventDaoImpl extends GeneralDaoImpl<Event, Integer> implements IEve
 
     @SuppressWarnings("unchecked")
     @Override
-    public List<String> findEventId(int id) {
+    public List<Event> findEventId(int idEvent) {
         Criteria c = currentSession().createCriteria(Event.class);
         return c.list();
     }

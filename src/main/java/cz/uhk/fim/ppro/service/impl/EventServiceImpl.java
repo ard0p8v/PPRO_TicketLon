@@ -29,7 +29,7 @@ public class EventServiceImpl extends GeneralServiceImpl<Event, Integer> impleme
     }
 
     @Override
-    public List<String> getEventId(int id) {
+    public List<Event> findEventId(int id) {
         return eventDao.findEventId(id);
     }
 

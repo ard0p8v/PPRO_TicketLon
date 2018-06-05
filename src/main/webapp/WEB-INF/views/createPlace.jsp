@@ -17,35 +17,35 @@
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="name">Název:</label>
                     <div class="col-sm-10">
-                        <form:input type="text" path="name" class="form-control" placeholder="Název typu události" autofocus="true"></form:input>
+                        <form:input type="text" path="name" class="form-control" placeholder="Název místa" autofocus="true"></form:input>
                         <form:errors path="name"></form:errors>
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="street">Ulice:</label>
                     <div class="col-sm-10">
-                        <form:input type="text" path="street" class="form-control" placeholder="Název typu události" autofocus="true"></form:input>
+                        <form:input type="text" path="street" class="form-control" placeholder="Ulice" autofocus="true"></form:input>
                         <form:errors path="street"></form:errors>
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="city">Město:</label>
                     <div class="col-sm-10">
-                        <form:input type="text" path="city" class="form-control" placeholder="Název typu události" autofocus="true"></form:input>
+                        <form:input type="text" path="city" class="form-control" placeholder="Město" autofocus="true"></form:input>
                         <form:errors path="city"></form:errors>
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="zipCode">PSČ:</label>
                     <div class="col-sm-10">
-                        <form:input type="text" path="zipCode" class="form-control" placeholder="Název typu události" autofocus="true"></form:input>
+                        <form:input type="text" path="zipCode" class="form-control" placeholder="Poštovní směrovací číslo" autofocus="true"></form:input>
                         <form:errors path="zipCode"></form:errors>
                     </div>
                 </div>
                 <div class="form-group ${status.error ? 'has-error' : ''}">
                     <label class="control-label col-xs-2" for="numberOfPlaces">Počet míst:</label>
                     <div class="col-sm-10">
-                        <form:input type="text" path="numberOfPlaces" class="form-control" placeholder="Název typu události" autofocus="true"></form:input>
+                        <form:input type="text" path="numberOfPlaces" class="form-control" placeholder="Počet míst k dispozici" autofocus="true"></form:input>
                         <form:errors path="numberOfPlaces"></form:errors>
                     </div>
                 </div>

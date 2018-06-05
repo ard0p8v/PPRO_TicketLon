@@ -17,7 +17,7 @@ public interface IEventService extends IGeneralService<Event, Integer> {
      * @param title whole or partial name of events
      * @return returns collection of String
      */
-    public List<String> getEventId(int id);
+    public List<Event> findEventId(int id);
 
     /**
      * Method finds events by name

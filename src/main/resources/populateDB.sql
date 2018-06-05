@@ -41,10 +41,10 @@ INSERT IGNORE INTO Role VALUES
   (3, 'ROLE_MANAGER', 'test');
 
 INSERT IGNORE INTO Role_has_User VALUES
-  (2, 1),
   (2, 2),
   (3, 3),
-  (1, 3);
+  (1, 2),
+  (4, 1);
 
 INSERT IGNORE INTO Reservation VALUES
   (1, 1, 1, 5, '2018-05-31 15:01:42.000000'),

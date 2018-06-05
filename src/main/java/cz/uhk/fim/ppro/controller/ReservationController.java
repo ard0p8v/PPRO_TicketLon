@@ -39,8 +39,8 @@ public class ReservationController {
 
     @RequestMapping(value={"/events/{id}/manage/reservation/create"}, method = {org.springframework.web.bind.annotation.RequestMethod.GET})
     public String createReservation(Model model, @PathVariable("id") int id) {
-        model.addAttribute("eventReservation", eventService.read(id));
-        model.addAttribute("eventList", eventService.getAll());
+        model.addAttribute("eventReservation", eventService.findEventId(id));
+        //model.addAttribute("eventList", eventService.getAll());
         model.addAttribute("reservationForm", new Reservation(eventService.read(id)));
 
         return "createReservation";

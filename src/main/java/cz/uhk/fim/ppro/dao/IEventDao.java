@@ -17,7 +17,7 @@ public interface IEventDao extends IGeneralDao<Event, Integer> {
      * @param id whole or partial event name
      * @return returns collection of string
      */
-    public List<String> findEventId(int id);
+    public List<Event> findEventId(int idEvent);
 
     /**
      * Method finds all event with corresponding name

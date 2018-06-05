@@ -94,6 +94,21 @@
         <put-attribute name="body" value="/WEB-INF/views/editNews.jsp" />
     </definition>
 
+    <definition name="users" extends="defaultTemplate">
+        <put-attribute name="title" value="Seznam uživatelů"/>
+        <put-attribute name="body" value="/WEB-INF/views/users.jsp" />
+    </definition>
+
+    <definition name="createUser" extends="defaultTemplate">
+        <put-attribute name="title" value="Vytvoření uživatele"/>
+        <put-attribute name="body" value="/WEB-INF/views/createUser.jsp" />
+    </definition>
+
+    <definition name="editUser" extends="defaultTemplate">
+        <put-attribute name="title" value="Úprava uživatele"/>
+        <put-attribute name="body" value="/WEB-INF/views/editUser.jsp" />
+    </definition>
+
     <definition name="reservations" extends="defaultTemplate">
         <put-attribute name="title" value="Seznam rezervací"/>
         <put-attribute name="body" value="/WEB-INF/views/reservations.jsp" />
